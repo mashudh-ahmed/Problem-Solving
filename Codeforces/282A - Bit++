@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n;
+    cin>>n;
+    
+    int X = 0;
+    
+    while (n--)
+    {   
+        string x;
+        cin>> x;
+        if (x == "X++" || x == "++X")
+        {
+            X+=1;
+            continue;
+        }
+        else if (x == "X--" || x == "--X")
+        {
+            X-=1;
+            continue;
+        }
+        break;
+    }
+    cout<< X <<endl;
+    return 0;
+}
