@@ -4,21 +4,35 @@ using namespace std;
 int main() {
     int n;
     cin >> n;
-    int count1 = 0;
-    int count2 = 0;
 
-    for (int i = 0; i < n; i++) {
+    int untreated = 0;
+    int availableOfficers = 0;
+
+    while (n--) 
+    {
         int x;
         cin >> x;
-        if (x > 0) {
-            count1 += x;
-        } else if (count1 < 1) {
-            count2++;
-        } else {
-            count1--;
+
+        if (x == -1) 
+        {
+            if (availableOfficers == 0)
+            {
+               untreated++;  
+            }
+               
+            else
+            {
+                availableOfficers--;
+            }
+        }
+        
+         else 
+        {
+            availableOfficers += x;
         }
     }
 
-    cout << count2;
+    cout << untreated << endl;
+
     return 0;
 }
